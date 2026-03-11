@@ -1,0 +1,43 @@
+body{
+    background-color: lightpink;
+    font-family: Arial, sans-serif;
+    margin:0;
+}
+
+/* centers the app */
+.container{
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1{
+    color: hotpink;
+}
+
+p{
+    margin-bottom: 30px;
+}
+
+/* button layout */
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background-color:white;
+    color:hotpink;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color:hotpink;
+    color:white;
+}
