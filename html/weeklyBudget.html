@@ -16,23 +16,42 @@
         <span class="bar"></span>
         <span class="bar"></span>
     </div>
+
         <ul class="navbar__menu">
-            <li class="navbar__item">
-               <a href="/" class="navbar__links">Home</a> 
+            <li class="navbar__item"><a href="/" class="navbar__links">Home</a> 
             </li>
-            <li class="navbar__item">
-               <a href="/weeklyBudget.html" class="navbar__links">Weekly Budget</a> 
+            <li class="navbar__item"><a href="weeklyBudget.html" class="navbar__links">Weekly Budget</a> 
             </li>
-             <li class="navbar__item">
-               <a href="/monthlyBudget.html" class="navbar__links">Monthly Budget</a> 
+             <li class="navbar__item"><a href="monthlyBudget.html" class="navbar__links">Monthly Budget</a> 
             </li>
-            <li class="navbar__btn">
-               <a href="/signUp.html" class="button">Sign Up</a> 
+            <li class="navbar__btn"><a href="signUp.html" class="button">Sign Up</a> 
             </li>
         </ul>
     </div>
-    </div>
-  </div>
   </nav>
+
+    <section class = "budget-section">
+        <h2>Weekly Budget</h2>
+
+        <form id=" 'expense-form">
+            <input type="number" id="income" placeholder="Enter Weekly Income" required>
+            <input type="text" id="category" placeholder="Category" required>
+            <input type="number" id="amount" plaaceholder="Amount" required>
+            <button type="submit" id="add-expense">Add Expense</button>
+        </form>
+
+        <p>Balance: $<span id="balance">0</span></p>
+
+        <table id="expense-table">
+            <thread>
+                <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                </tr>
+            </thread>
+            <tbody></tbody>
+        </table>
+    </section> 
+    
  </body>
 </html>
