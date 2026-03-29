@@ -30,9 +30,24 @@
                <a href="signUp.html" class="button">Sign Up</a> 
             </li>
         </ul>
-    </div>
-    </div>
   </div>
   </nav>
+
+  <h1>Monthly Budget</h1>
+  <h2>Add Transaction</h2>
+
+<form id="budget-form">
+  <input type="text" id="title" placeholder="Transaction Type" required>
+  <input type="number" id="amount" placeholder="Amount" required>
+
+  <select id="type">
+    <option value="income">Income</option>
+    <option value="expense">Expense</option>
+  </select>
+
+  <button type="submit">Add</button>
+</form>
+
+<ul id="list"></ul>
  </body>
 </html>
