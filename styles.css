@@ -150,3 +150,52 @@
         transition: all 0.5s ease;
     }
 }
+
+
+ body{
+        background-color: #FFC0CB;
+    }
+
+    .auth-container {
+        margin: 80px auto;
+        padding: 40px;
+        width: 300px;
+        background: #131313;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+    }
+
+    .auth-title {
+        margin-bottom: 20px;
+    }
+
+    .auth-form input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 4px;
+    }
+
+    .auth-button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background: #ff8176;
+        color: white;
+        cursor: pointer;
+    }
+
+    .auth-button:hover {
+        background: #ff3e6c;
+    }
+
+    .auth-link {
+        margin-top:10px;
+        background: none;
+        border: none;
+        color: #ff8176;
+        cursor: pointer;
+    }
