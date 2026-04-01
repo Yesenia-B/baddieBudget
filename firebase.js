@@ -1,7 +1,7 @@
-
 // Import Firebase SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import {getAuth} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -15,11 +15,12 @@ const firebaseConfig = {
   measurementId: "G-EVLWB1GZF3"
 };
 
-// Initialize Firebase
+// Initializing Firebase
 const app = initializeApp(firebaseConfig);
 
 // Initialize Firestore
 const db = getFirestore(app);
+const auth = getAuth(app);
 
 // Export database
-export { db };
+export {app,auth, db};

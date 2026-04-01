@@ -94,7 +94,7 @@
 
 .button:hover {
     background: #4387ff;
-    transition: all 0.3s ease;
+    transform: scale(1.03);
 }
 
 .navbar__links:hover{
@@ -153,17 +153,19 @@
 
 
  body{
-        background-color: #FFC0CB;
+        background: linear-gradient(to right, #ff9a9e, #fecaef);
     }
 
     .auth-container {
         margin: 80px auto;
         padding: 40px;
-        width: 300px;
-        background: #131313;
-        border-radius: 10px;
+        width: 320px;
+        background: white;
+        color: #333;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        border-radius: 12px;
         text-align: center;
-        color: white;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     .auth-title {
@@ -172,10 +174,13 @@
 
     .auth-form input {
         width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: none;
-        border-radius: 4px;
+        padding: 12px;
+        margin: 12px 0;
+        border: 2px solide #eee;
+        border-radius: 6px;
+        background: #f9f9f9;
+        font-size: 14px;
+        transition: 0.3s;
     }
 
     .auth-button {
@@ -184,12 +189,14 @@
         border: none;
         border-radius: 4px;
         background: #ff8176;
-        color: white;
+        color: black;
         cursor: pointer;
+        transition: 0.3s;
     }
 
     .auth-button:hover {
         background: #ff3e6c;
+        transform: scale(1.03);
     }
 
     .auth-link {
@@ -198,4 +205,9 @@
         border: none;
         color: #ff8176;
         cursor: pointer;
+    }
+
+    h2 {
+        text-align: center;
+        padding-top: 20px;
     }
