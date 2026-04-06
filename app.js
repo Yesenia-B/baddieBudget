@@ -1,10 +1,12 @@
 import { db } from './firebase.js';
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 console.log("🔥 App is running"); // test
 
 const form = document.getElementById("budget-form");
 
+if (form){
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -28,4 +30,17 @@ form.addEventListener("submit", async (e) => {
   } catch (err) {
     console.error("❌ Firebase error:", err);
   }
+})
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.navbar__menu');
+
+if (menu && menuLinks) {
+  menu.addEventListener('click', function() {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+  });
+}
 });

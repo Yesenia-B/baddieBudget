@@ -4,52 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Baddie Budget</title>
-    <link rel ="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav class ="navbar">
-<div class="navbar__container">
-    <a href="/" id=""nav__logo">The Baddie Budget</a>
+<nav class="navbar">
+  <div class="navbar__container">
+
+    <a href="/" id="navbar__logo">The Baddie Budget</a>
+
     <div class="navbar__toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </div>
-        <ul class="navbar__menu">
-            <li class="navbar__item">
-               <a href="/" class="navbar__links">Home</a> 
-            </li>
-            <li class="navbar__item">
-               <a href="weeklyBudget.html" class="navbar__links">Weekly Budget</a> 
-            </li>
-             <li class="navbar__item">
-               <a href="monthlyBudget.html" class="navbar__links">Monthly Budget</a> 
-            </li>
-            <li class="navbar__btn">
-               <a href="signUp.html" class="button">Sign Up</a> 
-            </li>
-        </ul>
+
+    <ul class="navbar__menu">
+      <li class="navbar__item">
+        <a href="/" class="navbar__links">Home</a>
+      </li>
+      <li class="navbar__item">
+        <a href="weeklyBudget.html" class="navbar__links">Weekly Budget</a>
+      </li>
+      <li class="navbar__item">
+        <a href="monthlyBudget.html" class="navbar__links">Monthly Budget</a>
+      </li>
+      <li class="navbar__btn">
+        <a href="signUp.html" class="button">Sign Up</a>
+      </li>
+      <li class="navbar__btn">
+                <a href="login.html" class="button">Log In</a>
+      </li>
+    </ul>
   </div>
-  </nav>
+</nav>
 
   <h2>Monthly Budget</h2>
   <h3>Add Transaction</h3>
 
 
 <form id="budget-form">
-  <input type="text" id="title" placeholder="Transaction Type" required>
-  <input type="number" id="amount" placeholder="Amount" required>
-  <input type="category" id="category" placeholder="'Category" required>
+  <label for="title">Transaction Name </label>
+  <input type="text" id="title" required>
 
-  <select id="type">
+  <label for="amount">Amount ($) </label>
+  <input type="number" id="amount" step="0.01" required>
+
+  <label for="type">Type</label>
+    <select id="type">
     <option value="income">Income</option>
     <option value="expense">Expense</option>
   </select>
 
-  <button type="submit">Add</button>
+  <label for="category">Category</label> 
+  <select id="category" required>
+    <option value=" "> Select Category</option>
+    <option value="food">Food</option>
+    <option value="transport">Transport</option>
+    <option value="entertainment">Entertainment</option>
+    <option value="bills">Bills</option>
+  </select>
+
+  <button type="submit">Add Transaction</button>
 </form>
 
 <ul id="list"></ul>
+
+  <!----DISPLAY ---------->
+<div class="summary">
+  <h2> Monthly Summary</h2>
+  <p>Income: $<span id="total-income">0</span></p>
+  <p>Expenses: $<span id="total-expense">0</span></p>
+  <p>Balance: $<span id="balance">0</span></p>
+</div>
+  <script type="module" src="auth-signUp.js" ></script>
+  <script type="module" src="app.js"></script>
  </body>
 </html>

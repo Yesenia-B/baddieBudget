@@ -74,7 +74,8 @@
     justify-content: center;
     align-items: center;
     padding: 0 1rem;
-    width: 100%;
+    width: auto;
+    margin-left: 10px;
 }
 
 .button{
@@ -82,9 +83,9 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 16px;
     height: 100%;
-    width: 100%;
+    width: auto;
     border: none;
     outline: none;
     border-radius: 4px;
@@ -93,7 +94,7 @@
 }
 
 .button:hover {
-    background: #4387ff;
+    background: #9143ff;
     transform: scale(1.03);
 }
 
@@ -122,18 +123,20 @@
         top: -1000px;
         opacity: 0;
         transition: all 0.5s ease;
-        height: 50vh;
+        height: auto;
         z-index: -1;
         background: #131313;
+        padding-bottom: 20px;
     }
 
     .navbar__menu.active {
+        border-top: 1px solid #222;
         background: #131313;
         top: 100%;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 50vh;
+        height: auto;
         font-size: 1.6rem;
     }
 
@@ -147,7 +150,57 @@
         margin: 5px auto;
         background: #fff;
         display: block;
-        transition: all 0.5s ease;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .navbar__item {
+        width: 100%;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20px;
+        right: 5px;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__btn {
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: auto;
+        margin: 0;
+        padding: 12px;
+    }
+
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+     #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+     #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
 
@@ -176,7 +229,7 @@
         width: 100%;
         padding: 12px;
         margin: 12px 0;
-        border: 2px solide #eee;
+        border: 2px solid #eee;
         border-radius: 6px;
         background: #f9f9f9;
         font-size: 14px;
@@ -210,4 +263,14 @@
     h2 {
         text-align: center;
         padding-top: 20px;
+        padding: 20px
     }
+
+    h3 {
+        padding: 5px;
+    }
+
+    .summary{
+        padding: 30px;
+    }
+
