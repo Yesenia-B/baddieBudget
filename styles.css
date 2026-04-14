@@ -79,7 +79,7 @@
 }
 
 .button{
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
@@ -91,6 +91,7 @@
     border-radius: 4px;
     background: #ff8176;
     color: #fff;
+    transition: all 0.3s ease;
 }
 
 .button:hover {
@@ -167,7 +168,7 @@
     #mobile-menu {
         position: absolute;
         top: 20px;
-        right: 5px;
+        right: 15px;
         transform: translate(5%, 20%);
     }
 
@@ -209,13 +210,13 @@
         background: linear-gradient(to right, #ff9a9e, #fecaef);
     }
 
+   /* Authentication Section */ 
     .auth-container {
         margin: 80px auto;
         padding: 40px;
         width: 320px;
         background: white;
         color: #333;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         border-radius: 12px;
         text-align: center;
         box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -242,7 +243,8 @@
         border: none;
         border-radius: 4px;
         background: #ff8176;
-        color: black;
+        color: #111;
+        font-weight: 600;
         cursor: pointer;
         transition: 0.3s;
     }
@@ -262,7 +264,6 @@
 
     h2 {
         text-align: center;
-        padding-top: 20px;
         padding: 20px
     }
 
@@ -274,3 +275,143 @@
         padding: 30px;
     }
 
+    /* Hero Section */
+    .main__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        margin: 0 auto;
+        height: auto;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0 50px;
+    }
+
+    .main__content h1 {
+        font-size: 4rem;
+        background-color: #ff8177;
+        background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+        background-size: 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+    }
+
+    .main__content h2{
+        font-size: 4rem;
+        background-color: #ff8177;
+        background-image: linear-gradient(to top, #b721ff 0%, #2124fd 100%);
+        background-size: 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+    }
+
+    .main__content p {
+        margin-top: 1rem;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .main__btn {
+        font-size: 1rem;
+        background-image: linear-gradient(to top, #f77062 0%, #fe5154 100%);
+        padding: 14px 32px;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        margin-top: 2rem;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.35s;
+        outline: none;
+    }
+
+    .main__btn a {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .main__btn:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.2);
+        }
+
+    .main__img--container {
+        text-align: center;
+    }
+
+    #main__img {
+        height: 80%;
+        width: 80%;
+    }
+
+ 
+
+    @media screen and (max-width: 480px){
+    .main__content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .main__content h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .main__content p {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .main__btn {
+        padding: 12px 36px;
+        margin: 2.5rem 0;
+    }
+    }
+
+    /* Footer Section */
+    .footer {
+        background: #111;
+        color: #fff;
+        padding: 40px 20px;
+    }
+
+    .footer__container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .footer__column {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .footer__column a {
+        color: #ccc;
+        text-decoration: none;
+        margin: 5px 0;
+    }
+
+    .footer__column a:hover {
+        color: #fff;
+    }
+
+    .footer__bottom {
+        text-align: center;
+        margin-top: 20px;
+    }
