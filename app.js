@@ -1,10 +1,11 @@
-import { db } from './firebase.js';
+import {auth, db } from './firebase.js';
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 console.log("🔥 App is running"); // test
 
 const form = document.getElementById("budget-form");
+const user = auth.currentUser;
 
 if (form){
 form.addEventListener("submit", async (e) => {
@@ -16,6 +17,7 @@ form.addEventListener("submit", async (e) => {
 
   try {
     await addDoc(collection(db, "transactions"), {
+      uid: user.uid,
       title,
       amount,
       type,
@@ -33,6 +35,7 @@ form.addEventListener("submit", async (e) => {
 })
 }
 
+/* Mobile Menu */
 document.addEventListener("DOMContentLoaded", () => {
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
