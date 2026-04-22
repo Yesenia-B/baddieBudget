@@ -1,43 +1,20 @@
 import { auth } from './firebase.js';
-import { createUserWithEmailAndPassword,
-         signInWithEmailAndPassword,
+import { signInWithEmailAndPassword,
          onAuthStateChanged,
          signOut 
  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-/* Get User Info */
-const form = document.querySelector("#signup-form");
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-
-/* Sign Up User */
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    console.log("Signed up!", userCredential.user);
-    alert("Your account has been created! You can now sign in.");
-    form.reset();
-    window.location.href = "dashboard.html";
-    
-  } catch (err) {
-    console.error(err.code, err.message);
-    alert(err.message);
-  }
-
-});
 
 /* Log in */
-const loginForm = document.querySelector("#login-form");
+const loginForm = document.querySelector('#login-form');
 
 if (loginForm){
   loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const email= document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
+    const email= loginForm.querySelector("#email").value;
+    const password = loginForm.querySelector("#password").value;
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -53,7 +30,7 @@ if (loginForm){
 }
 
 
-/* */
+/* 
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("User logged in:", user.email);
@@ -70,6 +47,7 @@ onAuthStateChanged(auth, (user) => {
   }
 
 });
+*/
 
 /* Logout User */
 const logout = document.querySelector('#logout');
