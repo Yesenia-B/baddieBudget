@@ -12,6 +12,7 @@
 <body>
 
 <!------------ Navbar Section--------------->
+<!------------ Navbar Section--------------->
 <nav class ="navbar">
     <div class="navbar__container">
 
@@ -26,7 +27,10 @@
     </div>
         <ul class="navbar__menu">
             <li class="navbar__item">
-               <a href="/" class="navbar__links">Home</a> 
+               <a href="index.html" class="navbar__links">Home</a> 
+            </li>
+             <li class="navbar__btn">
+                <a href="dashboard.html" class="navbar__links">Dashboard</a>
             </li>
             <li class="navbar__item">
                <a href="weeklyBudget.html" class="navbar__links">Weekly Budget</a> 
@@ -35,17 +39,19 @@
                <a href="monthlyBudget.html" class="navbar__links">Monthly Budget</a> 
             </li>
             <li class="navbar__btn">
-               <a href="signUp.html" class="button">Sign Up</a> 
+               <a href="signUp.html" class="button" id="signup-btn">Sign Up</a> 
             </li>
             <li class="navbar__btn">
-                <a href="login.html" class="button">Log In</a>
+                <a href="login.html" class="button" id="login-btn">Log In</a>
             </li>
               <li class="navbar__btn">
-                <a href="index.html" class="button">Log Out</a>
+                <a href="#" class="button" id="logout-btn">Log Out</a>
             </li>
+
         </ul>
     </div>
   </nav>
+
 
   <!--------- Hero Section---------------->
    <h3> Good Morning, Yesenia! </h3>
@@ -96,5 +102,9 @@
 
 <script type="module" src="app.js"></script>
 <script type="module" src="auth.js"></script>
+<script type="module">
+  import { requireAuth } from "./authGuard.js";
+  requireAuth();
+</script>
  </body>
 </html>

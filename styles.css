@@ -5,6 +5,10 @@
     font-family: 'Kumbh Sans', sans-serif;
 }
 
+#logout-btn {
+  display: none;
+}
+
 .navbar {
     background: #131313;
     height: 80px;
@@ -271,15 +275,12 @@
 
     h2 {
         text-align: center;
-        padding: 20px
+        padding: 20px;
+        color: #ff8177;
     }
 
     h3 {
         padding: 5px;
-    }
-
-    .summary{
-        padding: 30px;
     }
 
     /* Hero Section */
@@ -298,13 +299,16 @@
         width: 100%;
         max-width: 1300px;
         padding: 0 50px;
+        margin-bottom: 100px;
     }
 
 
     .main__content h1 {
-        font-size: 3rem;
+        display: flex;
+        font-size: 4rem;
+        letter-spacing: 1px;
         background-color: #ff8177;
-        background-image: linear-gradient(to right, #ff4d6d, #ff85a1);
+        background-image: linear-gradient(to right, #ff4d6d, #ff2e63);
         background-size: 100%;
         background-clip: text;
         -webkit-background-clip: text;
@@ -314,7 +318,7 @@
     }
 
     .main__content h2{
-        font-size: 2.5rem;
+        font-size: 2rem;
         background-color: #ff8177;
         background-image: linear-gradient(to right, #b721ff, #2124fd);
         background-size: 100%;
@@ -332,6 +336,7 @@
     }
 
     .main__btn {
+        display: flex;
         font-size: 1.5rem;
         padding: 12px 24px;
         border: none;
@@ -365,7 +370,7 @@
     }
 
     .main__btn:hover {
-        transform: scale(1.05);
+        transform: scale(1.2);
         box-shadow: 0 0 20px rgba(255, 105, 135, 0.6);
     }
 
@@ -437,15 +442,38 @@
         text-align: center;
         margin-top: 20px;
     }
+     /* dashboard */
 
     .export-btn{
         background: #ea580c;
         color: white;
         border: none;
-        border-radius: 8px;
+        border-radius: 6px;
         padding: 0.5rem 1rem;
         font-size: 0.875rem;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         gap: 0.5rem;
+    }
+
+    /* weekly budget */
+    .transaction-table table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+
+    .transaction-table th, .transaction-table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .transaction-table th {
+        background-color: #ff8177;
+    }
+
+    .summary{
+        padding: 30px;
     }

@@ -11,43 +11,54 @@
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="navbar__container">
-     <a href="/" id="navbar__logo">
-        <i class="fa-solid fa-dollar-sign"></i>
-        The Baddie Budget</a>
+<!------------ Navbar Section--------------->
+<nav class ="navbar">
+    <div class="navbar__container">
+
+        <a href="/" id="navbar__logo">
+            <i class="fa-solid fa-dollar-sign"></i>
+            The Baddie Budget</a>
 
     <div class="navbar__toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
     </div>
-
-    <ul class="navbar__menu">
-      <li class="navbar__item">
-        <a href="/" class="navbar__links">Home</a>
-      </li>
-      <li class="navbar__item">
-        <a href="weeklyBudget.html" class="navbar__links">Weekly Budget</a>
-      </li>
-      <li class="navbar__item">
-        <a href="monthlyBudget.html" class="navbar__links">Monthly Budget</a>
-      </li>
-      <li class="navbar__btn">
-        <a href="signUp.html" class="button">Sign Up</a>
-      </li>
-      <li class="navbar__btn">
-                <a href="login.html" class="button">Log In</a>
-      </li>
-        <li class="navbar__btn">
-                <a href="index.html" class="button">Log Out</a>
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+               <a href="index.html" class="navbar__links">Home</a> 
             </li>
-    </ul>
-  </div>
-</nav>
+             <li class="navbar__btn">
+                <a href="dashboard.html" class="navbar__links">Dashboard</a>
+            </li>
+            <li class="navbar__item">
+               <a href="weeklyBudget.html" class="navbar__links">Weekly Budget</a> 
+            </li>
+             <li class="navbar__item">
+               <a href="monthlyBudget.html" class="navbar__links">Monthly Budget</a> 
+            </li>
+            <li class="navbar__btn">
+               <a href="signUp.html" class="button" id="signup-btn">Sign Up</a> 
+            </li>
+            <li class="navbar__btn">
+                <a href="login.html" class="button" id="login-btn">Log In</a>
+            </li>
+              <li class="navbar__btn">
+                <a href="#" class="button" id="logout-btn">Log Out</a>
+            </li>
+
+        </ul>
+    </div>
+  </nav>
 
   <!----BUDGET FORM---------->
 <h2>Weekly Budget</h2>
+
+   <div class="export-btn">
+    <i class="fas fa-download"></i>
+        Export
+   </div>
+
   <h3>Add Transaction</h3>
 
 <form id="budget-form">
@@ -79,6 +90,21 @@
 <ul id="list"></ul>
 
   <!----DISPLAY ---------->
+<div class="transaction-table">
+  <table>
+    <thread>
+    <tr>
+      <th>Type</th>
+      <th>Amount</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Action</th>
+    </tr>
+    </thread>
+    <tbody id="transaction-list"></tbody>
+  </table>
+</div>
+
 <div class="summary">
   <h2>Weekly Summary</h2>
   <p>Income: $<span id="total-income">0</span></p>
