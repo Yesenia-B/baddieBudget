@@ -31,6 +31,7 @@ if (logout){
       e.preventDefault();
       await signOut(auth);
       console.log('user has been signed out');
-      window.location.href= "login.html";
+      window.location.href= "index.html";  
+    
     });
-}
+  }
