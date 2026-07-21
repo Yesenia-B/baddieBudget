@@ -81,15 +81,21 @@
       <option value="expense">Expense</option>
     </select>
 
-    <label for="category">Category</label> 
+      <label for="category">Category</label> 
     <select id="category" required>
       <option value=" "> Select Category</option>
-      <option value="paycheck">Paycheck</option>
-      <option value="food">Food</option>
+      <option value="earned income">Income</option>
+      <option value="food">Housing</option>
+      <option value="food">Groceries/Takeout/Dining In</option>
       <option value="transport">Transportation</option>
       <option value="entertainment">Entertainment</option>
-      <option value="bills">Bills</option>
+      <option value="bills">Scheduled Bills</option>
+      <option value="misc">Miscellaneous</option>
+        <option value="health">Health/Medical/Wellbeing</option>
     </select>
+
+    <label for="date">Due Date</label>
+    <input type="date" id="date" required>
 
     <button type="submit">Add Transaction</button>
 
@@ -104,9 +110,11 @@
   <table>
     <thead>
     <tr>
+      <th>Transaction</th>
       <th>Type</th>
-      <th>Amount</th>
       <th>Category</th>
+      <th>Amount</th>
+      <th>Due Date</th>
       <th>Action</th>
     </tr>
     </thead>
@@ -115,48 +123,16 @@
 </div>
 
 <div class="summary">
-  <h2>Weekly Summary</h2>
-  <p>Income: $<span id="total-income">0</span></p>
-  <p>Expenses: $<span id="total-expense">0</span></p>
-  <p>Balance: $<span id="balance">0</span></p>
+  <h2>Monthly Summary</h2>
+  <p>Monthly Income: $<span id="total-income">1000</span></p>
+  <p>Monthly Expenses: $<span id="total-expense">0</span></p>
+  <p>Balance: $<span id="balance">1000</span></p>
 </div>
 
-<!--------- Footer Section---------------->   
-   <footer class="footer">
-    <div class="footer__container">
-
-            <div class="footer__column">
-                <h2>About Us</h2>
-                <a href="howTo.html">How it works</a>
-                <a href="index.html">Sample Budget</a>
-                <a href="https://github.com/Yesenia-B/baddieBudget">Github</a>
-            </div>
-       
-            <div class="footer__column">
-                <h2>Support</h2>
-                <a href="login.html">Log In</a>
-                <a href="signUp.html">Sign Up</a>
-                <a href="index.html">Forgot Password</a>
-            </div>
-
-               <div class="footer__column">
-                <h2>Social</h2>
-                <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                <a href="https://x.com"><i class="fa-brands fa-twitter"></i> Twitter</a>
-                <a href="https://www.tiktok.com/en/"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
-            </div>
-
-        </div>
-        <p class="footer__bottom"> © 2026 The Baddie Budget</p>
-    </footer>
 
   <script type="module" src="auth.js" ></script>
   <script type="module" src="app.js"></script>
   <script type="module" src="monthlyBudget.js"></script>
-  <script type="module">
-  import { requireAuth } from "./authGuard.js";
-  requireAuth();
-</script>
 
  </body>
 </html>

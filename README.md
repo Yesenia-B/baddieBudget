@@ -5,7 +5,7 @@ by Yesenia Burgos
 Using:
 -HTML 
 -CSS
--JS
+-JavaScript
 -Firebase (backend/authentication)
 
 Purpose:

@@ -20,26 +20,22 @@ if (menu && menuLinks) {
 
   console.log(modal, openBtn, closeBtn);
 
-  if(!modal || !openBtn || !closeBtn) {
-    console.log("Modal Elements missing!");
-    return;
-  }
+  if (modal && openBtn && closeBtn) {
+      
+    openBtn.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
 
-  openBtn.addEventListener("click", () => {
-    modal.style.display = "block";
-  });
-
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  window.addEventListener("click", (e) => {
-    if(e.target === modal) {
+    closeBtn.addEventListener("click", () => {
       modal.style.display = "none";
-    }
+    });
+
+    window.addEventListener("click", (e) => {
+      if(e.target === modal) {
+        modal.style.display = "none";
+      }
    });
-  });
-
-  let transactions= [];
-
-  
+  } else {
+    console.log("Modal Incomplete");
+  }
+})

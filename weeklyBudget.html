@@ -77,19 +77,23 @@
 
     <label for="type">Type</label>
       <select id="type">
-      <option value="income">Income</option>
       <option value="expense">Expense</option>
     </select>
 
     <label for="category">Category</label> 
     <select id="category" required>
       <option value=" "> Select Category</option>
-      <option value="paycheck">Paycheck</option>
-      <option value="food">Food</option>
+      <option value="food">Housing</option>
+      <option value="food">Groceries/Takeout/Dining In</option>
       <option value="transport">Transportation</option>
       <option value="entertainment">Entertainment</option>
-      <option value="bills">Bills</option>
+      <option value="bills">Scheduled Bills</option>
+      <option value="misc">Miscellaneous</option>
+        <option value="health">Health/Medical/Wellbeing</option>
     </select>
+
+    <label for="date">Date></label>
+    <input type="date" id="date" required>
 
     <button type="submit">Add Transaction</button>
 
@@ -105,10 +109,11 @@
   <table>
     <thread>
     <tr>
+      <th>Transaction</th>
       <th>Type</th>
-      <th>Amount</th>
       <th>Category</th>
       <th>Amount</th>
+      <th>Date</th>
       <th>Action</th>
     </tr>
     </thread>

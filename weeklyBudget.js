@@ -1,14 +1,16 @@
 import { requireAuth } from "./authGuard.js";
 import {auth, db } from './firebase.js';
-import { doc, 
+import {doc, 
         collection, 
         addDoc, 
         query, 
         where, 
+        orderBy,
         onSnapshot, 
         deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
+document.addEventListener("DOMContentLoaded", () => {
 requireAuth();
 
 let currentUser = null;
@@ -39,35 +41,39 @@ if (form){
   const amount = parseFloat(document.getElementById("amount").value);
   const type = document.getElementById("type").value;
   const category = document.getElementById("category").value;
+  const date = document.getElementById("date").value;
 
   try {
-    await addDoc(collection(db, "transactions"), {
+    await addDoc(collection(db, "weekly transactions"), {
       uid: currentUser.uid,
       title,
       amount,
       type,
       category,
-      createdAt: new Date()
+      createdAt: new Date(),
+      date
     });
+
 
     console.log("✅ Saved to Firebase!");
     alert("Transaction saved!");
 
     form.reset();
-    listenForTransactions();
 
   } catch (err) {
     console.error("❌ Firebase error:", err);
   }
 });
+}
 
 //listener 
  function listenForTransactions() {
   if(!currentUser) return;
 
   const q = query(
-    collection(db, "transactions"),
-    where("uid", "==", currentUser.uid)
+    collection(db, "weekly transactions"),
+    where("uid", "==", currentUser.uid),
+    orderBy("date", "desc")
   );
 
   onSnapshot(q, (snapshot) => {
@@ -80,9 +86,10 @@ if (form){
     
       row.innerHTML= `
         <td>${data.title}</td>
-        <td>${data.amount.toFixed(2)}</td>
-        <td>${data.category}</td>
         <td>${data.type}</td>
+        <td>${data.category}</td>
+        <td>${data.amount.toFixed(2)}</td>
+        <td>${data.date}</td>
         <td>
           <button class="delete-btn" data-id = "${docSnap.id}">
             <i class = "fa-solid fa-trash"></i>
@@ -107,9 +114,8 @@ list.addEventListener("click", async (e) => {
 
     try {
       await deleteDoc(doc(db, "transactions", id));
-      loadTransactions();
     } catch(err){
       console.error("Delete failed:", err);
     }
 });
-}
+});
