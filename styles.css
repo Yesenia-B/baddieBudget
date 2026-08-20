@@ -381,7 +381,7 @@
 
     .main__btn {
         display:flex;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         padding: 12px 24px;
         border: none;
         border-radius: 10px;
@@ -477,7 +477,7 @@
     }
 
     .footer__column a {
-        color: #ccc;
+        color: #4A4145;
         text-decoration: none;
         margin: 5px 0;
     }
@@ -489,6 +489,7 @@
     .footer__bottom {
         text-align: center;
         margin-top: 20px;
+        padding-bottom: 50px;
     }
      /* dashboard */
     /* Cards*/
