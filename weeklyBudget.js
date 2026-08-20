@@ -7,6 +7,7 @@ import {doc,
         where, 
         orderBy,
         onSnapshot, 
+        Timestamp,
         deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
@@ -17,6 +18,10 @@ let currentUser = null;
 
 const form = document.getElementById("budget-form");
 const list = document.getElementById("transaction-list");
+
+const incomeDisplay = document.getElementById("total-income");
+const expenseDisplay = document.getElementById("total-expense");
+const balanceDisplay = document.getElementById("balance");
 
 // checking if user
 onAuthStateChanged(auth, (user) => {
@@ -44,14 +49,14 @@ if (form){
   const date = document.getElementById("date").value;
 
   try {
-    await addDoc(collection(db, "weekly transactions"), {
+    await addDoc(collection(db, "transactions"), {
       uid: currentUser.uid,
       title,
       amount,
       type,
       category,
       createdAt: new Date(),
-      date
+      transactionDate: new Date(date)
     });
 
 
@@ -66,21 +71,55 @@ if (form){
 });
 }
 
+function getCurrentWeekDates(){
+
+  const today = new Date();
+  const day =today.getDay();
+  const diff = today.getDate() - day + (day === 0 ? -6: 1);
+
+  const startOfWeek = new Date(today.setDate(diff));
+  startOfWeek.setHours(0,0,0,0);
+
+  const endOfWeek = new Date(startOfWeek);
+  endOfWeek.setDate(startOfWeek.getDate() + 6);
+  endOfWeek.setHours(23,59,59,999);
+
+  return{
+    startOfWeek,
+    endOfWeek
+  };
+}
+
 //listener 
  function listenForTransactions() {
   if(!currentUser) return;
 
+  const {startOfWeek, endOfWeek} = getCurrentWeekDates();
+
   const q = query(
-    collection(db, "weekly transactions"),
+    collection(db, "transactions"),
     where("uid", "==", currentUser.uid),
-    orderBy("date", "desc")
+    where("transactionDate", ">=", Timestamp.fromDate(startOfWeek)),
+    where("transactionDate", "<=", Timestamp.fromDate(endOfWeek)),
+    orderBy("transactionDate", "desc")
   );
 
   onSnapshot(q, (snapshot) => {
     list.innerHTML = "";
 
+    let totalIncome= 0;
+    let totalExpenses = 0;
+
     snapshot.forEach((docSnap) => {
       const data = docSnap.data();
+
+      if(data.type == "income") {
+        totalIncome += data.amount;
+      }
+
+      if(data.type == "expense") {
+        totalExpenses += data.amount;
+      }
 
       const row = document.createElement("tr");
     
@@ -100,6 +139,18 @@ if (form){
 
       list.appendChild(row);
     });
+
+  const remaining = totalIncome - totalExpenses;
+
+  incomeDisplay.textContent = totalIncome.toFixed(2);
+
+expenseDisplay.textContent =
+  totalExpenses.toFixed(2);
+
+balanceDisplay.textContent =
+  remaining.toFixed(2);
+
+    
   });
 }
 
@@ -119,3 +170,4 @@ list.addEventListener("click", async (e) => {
     }
 });
 });
+

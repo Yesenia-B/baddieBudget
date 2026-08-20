@@ -12,7 +12,6 @@
 <body>
 
 <!------------ Navbar Section--------------->
-<!------------ Navbar Section--------------->
 <nav class ="navbar">
     <div class="navbar__container">
 
@@ -54,28 +53,33 @@
 
 
   <!--------- Hero Section---------------->
-   <h3> Good Morning, Yesenia! </h3>
+   
   <div class="main__container."></div>
+
+    <h3> Welcome Back, Baddie! </h3>
 
    <div class="main-content">
     <div class="dashboard-grid">
         <div class="card">
-            <h2>Your Weekly Spending:</h2>
+            <i class="fa-solid fa-wallet"></i>
+            <h2>Weekly Spending</h2>
             <p>Income earned:</p>
             <p>Total Expenses:</p>
             <p>Remaining Balance:</p>
         </div>
+
         <div class="card">
-            <h2> Your Monthly Spending:</h2>
+            <i class="fa-solid fa-wallet"></i>
+            <h2>Monthly Spending:</h2>
             <p>Monthly Budget:</p>
             <p>Spent:</p>
             <p>Remaining Balance:</p>
+
         </div>
-        <div class="card">
-            <h2>Your Yearly Spending:</h2>
-            <p>Total Income earned:</p>
-            <p>Total Expenses:</p>
-            <p>Remaining Balance:</p>
+        <div class="chart-card">
+            <i class="fa-solid fa-chart-pie"></i>
+            <h2>Compare Your Spending!</h2>
+            <canvas id="spendingChart"></canvas>
         </div>
     </div>
    </div>
@@ -115,5 +119,8 @@
   import { requireAuth } from "./authGuard.js";
   requireAuth();
 </script>
+<script type="module" src="dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
  </body>
 </html>

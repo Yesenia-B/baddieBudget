@@ -18,6 +18,10 @@ let currentUser = null;
 const form = document.getElementById("budget-form");
 const list = document.getElementById("transaction-list");
 
+const incomeDisplay = document.getElementById("total-income");
+const expenseDisplay = document.getElementById("total-expense");
+const balanceDisplay = document.getElementById("balance");
+
 // checking if user
 onAuthStateChanged(auth, (user) => {
   if(user) {
@@ -51,6 +55,7 @@ if (form){
       type,
       category,
       createdAt: new Date(),
+      transactionDate: new Date(date),
       date
     });
 
@@ -79,8 +84,19 @@ if (form){
   onSnapshot(q, (snapshot) => {
     list.innerHTML = "";
 
+    let totalIncome= 0;
+    let totalExpenses = 0;
+
     snapshot.forEach((docSnap) => {
       const data = docSnap.data();
+
+      if(data.type == "income") {
+        totalIncome += data.amount;
+      }
+
+      if(data.type == "expense") {
+        totalExpenses += data.amount;
+      }
 
       const row = document.createElement("tr");
     
@@ -100,6 +116,18 @@ if (form){
 
       list.appendChild(row);
     });
+
+  const remaining = totalIncome - totalExpenses;
+
+  incomeDisplay.textContent = totalIncome.toFixed(2);
+
+expenseDisplay.textContent =
+  totalExpenses.toFixed(2);
+
+balanceDisplay.textContent =
+  remaining.toFixed(2);
+
+    
   });
 }
 
@@ -119,3 +147,4 @@ list.addEventListener("click", async (e) => {
     }
 });
 });
+
