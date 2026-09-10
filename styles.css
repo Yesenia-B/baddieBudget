@@ -323,7 +323,7 @@
         z-index: 1;
         width: 100%;
         max-width: 1300px;
-        padding: 120px 0;
+        padding: 70px 50px;;
         margin-bottom: 100px;
         gap: 60px;
     }
@@ -332,12 +332,12 @@
         font-family: "Great Vibes", cursive;
         font-size: 4.5rem;
         color: var(--pink);
-        text-shadow: 0 0 4px rgba(255,95,162,.35);
-        line-height: .9;
+                text-shadow: 0 0 4px rgba(255,95,162,.35);
+        line-height: 1.5;
     }
 
     .baddie-text {
-        line-height: 0.9;
+        line-height: 1.1;
         font-family: serif;
         margin-top: 30px;
     }
@@ -347,7 +347,6 @@
     }
 
     .main__content h1 {
-        display: flex;
         font-size: 4rem;
         letter-spacing: 1px;
         background-color: #B89AA5;
@@ -359,9 +358,11 @@
         -moz-text-fill-color: transparent;
         -moz-background-clip: text;
         margin-top: 100px;
+        margin: 0;
     }
 
     .main__content h2{
+        margin-top: 20px;
         font-size: 1.4rem;
         background-color: #B89AA5;
         color: var(--text-muted);
@@ -393,7 +394,8 @@
         text-decoration: none;
         font-weight: 600px;
         transition: 0.3s;
-      
+        background:var(--pink-soft);
+        width: 400px;
     }
 
     .main__btn a {
@@ -455,43 +457,14 @@
     }
     }
 
-    /* Footer Section */
-    .footer {
-        background: #E8DDF0;
-        color: #4A4145;
-       
-    }
+/* HowTo */
 
-    .footer__container {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
+.home-content p{
+    text-align: center;
+    font-weight: 600;
+}
 
-    .footer__column {
-        display: flex;
-        flex-direction: column;
-        margin: 10px;
-        padding: 20px;
-        border-radius: 12px;
-    }
-
-    .footer__column a {
-        color: #4A4145;
-        text-decoration: none;
-        margin: 5px 0;
-    }
-
-    .footer__column a:hover {
-        color: #fff;
-    }
-
-    .footer__bottom {
-        text-align: center;
-        margin-top: 20px;
-        padding-bottom: 50px;
-    }
-     /* dashboard */
+/* dashboard */
     /* Cards*/
 .dashboard-grid {
     display: grid;
@@ -534,6 +507,10 @@
     margin-left: 50px;
 }
 
+.card h2{
+    margin-top: -20px;
+}
+
 .card p {
     width: 100px;
     text-align: left;
@@ -562,7 +539,16 @@
     height: 100% !important;
 }
 
-    /* weekly/monthly budget */
+.dashboard-welcome {
+    text-align: center;
+    padding: 0;
+    color: --var(text);
+    font-size: 1.5rem;
+   
+}
+
+
+/* weekly/monthly budget */
     .transaction-table table {
         width: 70%;
         border-collapse: collapse;
@@ -663,4 +649,46 @@
             padding: 1.5rem;
         }
     }
+        /* Footer Section */
+    .footer {
+        background: #E8DDF0;
+        color: #4A4145;
+       
+    }
 
+    .footer__container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .footer__column {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .footer__column a {
+        color: #4A4145;
+        text-decoration: none;
+        margin: 5px 0;
+    }
+
+    .footer__column a:hover {
+        color: #fff;
+    }
+
+    .footer__bottom {
+        text-align: center;
+        margin-top: 20px;
+        padding-bottom: 50px;
+    }
+
+/* howTo Page */
+    .home__content h3{
+        background: red;
+        text-align: center;
+        align-items: center;
+    }

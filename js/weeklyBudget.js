@@ -32,6 +32,9 @@ onAuthStateChanged(auth, (user) => {
   } else {
     console.log("No user logged in!");
   }
+
+  const logoutBtn= document.getElementById("logout-btn");
+  if(logoutBtn.style.display = "inline-flex");
 });
 
 
@@ -74,7 +77,7 @@ if (form){
 function getCurrentWeekDates(){
 
   const today = new Date();
-  const day =today.getDay();
+  const day = today.getDay();
   const diff = today.getDate() - day + (day === 0 ? -6: 1);
 
   const startOfWeek = new Date(today.setDate(diff));
@@ -144,11 +147,11 @@ function getCurrentWeekDates(){
 
   incomeDisplay.textContent = totalIncome.toFixed(2);
 
-expenseDisplay.textContent =
-  totalExpenses.toFixed(2);
+  expenseDisplay.textContent =
+    totalExpenses.toFixed(2);
 
-balanceDisplay.textContent =
-  remaining.toFixed(2);
+  balanceDisplay.textContent =
+    remaining.toFixed(2);
 
     
   });
@@ -164,7 +167,6 @@ list.addEventListener("click", async (e) => {
     if (!confirm("Delete this transaction?")) return;
 
     try {
-      await deleteDoc(doc(db, "transactions", id));
     } catch(err){
       console.error("Delete failed:", err);
     }

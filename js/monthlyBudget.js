@@ -121,10 +121,10 @@ if (form){
 
   incomeDisplay.textContent = totalIncome.toFixed(2);
 
-expenseDisplay.textContent =
+  expenseDisplay.textContent =
   totalExpenses.toFixed(2);
 
-balanceDisplay.textContent =
+  balanceDisplay.textContent =
   remaining.toFixed(2);
 
     

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Baddie Budget</title>
+    <title>Dashboard</title>
     <link rel ="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/2b4df875b3.js" 
     crossorigin="anonymous"></script>
@@ -38,7 +38,7 @@
                <a href="monthlyBudget.html" class="navbar__links">Monthly Budget</a> 
             </li>
               <li class="navbar__btn">
-                <a href="#" class="button" id="logout-btn">Log Out</a>
+                <a href="index.html" class="button" id="logout-btn">Log Out</a>
             </li>
 
         </ul>
@@ -48,32 +48,43 @@
 
   <!--------- Hero Section---------------->
    
-  <div class="main__container."></div>
-
+  <div class="dashboard-welcome"> 
     <h3> Welcome Back, Baddie! </h3>
+</div>
 
    <div class="main-content">
     <div class="dashboard-grid">
+         <div class="card">
+            <i class="fa-solid fa-wallet"></i>
+            <h2>This week:</h2>
+            <p>Budget: <span id="weeklyBudget">$0.00</span></p>
+            <p>Spent:<span id="weeklySpent">$0.00</span></p>
+            <p>Remaining Balance:<span id="weeklyRemaining">$0.00</span></p>
+        </div>
         <div class="card">
             <i class="fa-solid fa-wallet"></i>
-            <h2>Weekly Spending</h2>
-            <p>Income earned:</p>
-            <p>Total Expenses:</p>
-            <p>Remaining Balance:</p>
+            <h2>Next Week:</h2>
+            <p>Budget:<span id="nextWeekBudget">$0.00</span></p>
+            <p>Planned:<span id="nextWeekSpent">$0.00</span></p>
+            <p>Available:<span id="nextWeekRemaining">$0.00</span></p>
         </div>
 
         <div class="card">
             <i class="fa-solid fa-wallet"></i>
-            <h2>Monthly Spending:</h2>
-            <p>Monthly Budget:</p>
-            <p>Spent:</p>
-            <p>Remaining Balance:</p>
+            <h2>This Month:</h2>
+            <p>Monthly Budget:<span id="monthlyBudget">$0.00</span></p>
+            <p>Spent:<span id="monthlySpent">$0.00</span></p>
+            <p>Remaining Balance:<span id="monthlyRemaining">$0.00</span></p>
 
         </div>
         <div class="chart-card">
             <i class="fa-solid fa-chart-pie"></i>
             <h2>Compare Your Spending!</h2>
             <canvas id="spendingChart"></canvas>
+        </div>
+
+        <div class="card">
+            <h2>Spending <progress></progress></h2>
         </div>
     </div>
    </div>
@@ -94,6 +105,7 @@
                 <a href="login.html">Log In</a>
                 <a href="signUp.html">Sign Up</a>
                 <a href="forgotPassword.html">Forgot Password</a>
+                <a href= "index.html">Contact Us</a>
                 </div>
 
              <div class="footer__column">
@@ -103,18 +115,18 @@
                 <a href="https://www.tiktok.com/en/"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
             </div>
 
+
         </div>
         <p class="footer__bottom"> © 2026 The Baddie Budget</p>
         </footer>
 
-<script type="module" src="app.js"></script>
-<script type="module" src="auth.js"></script>
-<script type="module">
-  import { requireAuth } from "./authGuard.js";
-  requireAuth();
-</script>
-<script type="module" src="dashboard.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script type="module" src="js/app.js"></script>
+<script type="module">
+  import { requireAuth } from "./js/authGuard.js";
+  requireAuth();
+</script>
+<script type="module" src="js/dashboard.js"></script>
  </body>
 </html>

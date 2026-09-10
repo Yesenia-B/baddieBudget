@@ -1,4 +1,4 @@
-import { auth } from "./firebase.js";
+import { auth , db } from "../firebase.js";
 
 import { 
     onAuthStateChanged 
@@ -6,13 +6,46 @@ import {
 
 import { requireAuth } from "./authGuard.js";
 
+import {
+    collection,
+    query,
+    where,
+    getDocs
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
 requireAuth();
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async(user) => {
     if (!user){
         window.location.href ="login.html"
     }
+
+    const name = user.displayName;
+    document.querySelector(".dashboard-welcome").textContent =
+    `✨Welcome, ${name}!✨`;
+
+    const q = query(
+    collection(db, "transactions"),
+    where("uid", "==", currentUser.uid)
+ );
+
+    const snapshot = await getDocs(q);
+
+    snapshot.forEach((doc) => {
+        console.log(doc.data());
+    });
+
+    const logoutBtn= document.getElementById("logout-btn");
+
+    if(logoutBtn){
+        logoutBtn.style.display = "inline-flex";
+    };
 });
+
+
+
+//2024 Spending Chart
 const ctx = document.getElementById("spendingChart");
 
 new Chart(ctx, {

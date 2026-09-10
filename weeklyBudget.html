@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Baddie Budget</title>
+    <title>Weekly Budget </title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/2b4df875b3.js" 
     crossorigin="anonymous"></script>
@@ -31,8 +31,11 @@
              <li class="navbar__btn">
                 <a href="dashboard.html" class="navbar__links">Dashboard</a>
             </li>
+              <li class="navbar__item">
+               <a href="monthlyBudget.html" class="navbar__links">Monthly Budget</a> 
+            </li>
               <li class="navbar__btn">
-                <a href="#" class="button" id="logout-btn">Log Out</a>
+                <a href="index.html" class="button" id="logout-btn">Log Out</a>
             </li>
 
         </ul>
@@ -41,6 +44,12 @@
 
   <!----BUDGET FORM---------->
 <h2>Weekly Budget</h2>
+
+<div class="week-selector">
+  <label for="week">Select a week:</label>
+  <select id="week">
+  </select>
+</div>
 
   <button id="open-modal-btn" class="add-btn">Add Transaction
      <i class="fa-solid fa-circle-plus"></i>
@@ -75,7 +84,7 @@
         <option value="health">Health/Medical/Wellbeing</option>
     </select>
 
-    <label for="date">Date></label>
+    <label for="date" Date></label>
     <input type="date" id="date" required>
 
     <button type="submit">Add Transaction</button>
@@ -86,6 +95,8 @@
 
 
 <ul id="list"></ul>
+
+
 
   <!----DISPLAY ---------->
 <div class="transaction-table">
@@ -111,8 +122,8 @@
   <p>Balance: $<span id="balance">0</span></p>
 </div>
 
-<script type="module" src="auth.js"></script>
-<script type="module" src="app.js"></script>
-<script type="module" src="weeklyBudget.js"></script>
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/weeklyBudget.js"></script>
  </body>
 </html>
