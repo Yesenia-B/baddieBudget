@@ -34,8 +34,9 @@ onAuthStateChanged(auth, (user) => {
   }
 
   const logoutBtn= document.getElementById("logout-btn");
-  if(logoutBtn.style.display = "inline-flex");
-});
+  if(logoutBtn){
+    logoutBtn.style.display = "inline-flex";
+}});
 
 
 /* Form */
@@ -59,7 +60,8 @@ if (form){
       type,
       category,
       createdAt: new Date(),
-      transactionDate: new Date(date)
+      transactionDate: new Date(date),
+      date
     });
 
 
@@ -148,10 +150,10 @@ function getCurrentWeekDates(){
   incomeDisplay.textContent = totalIncome.toFixed(2);
 
   expenseDisplay.textContent =
-    totalExpenses.toFixed(2);
+  totalExpenses.toFixed(2);
 
   balanceDisplay.textContent =
-    remaining.toFixed(2);
+  remaining.toFixed(2);
 
     
   });

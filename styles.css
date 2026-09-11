@@ -235,13 +235,13 @@
         color: #4A4145;
     }
 
-   /* Authentication Section */ 
+   /*           Authentication Section -- SIGN UP/LOG IN   */ 
     .auth-container {
         margin: 80px auto;
         padding: 20px;
         width: 800px;
         background: #D9A7B0;
-        color: #4A4145;
+        color: var(--text);
         border-radius: 12px;
         text-align: center;
         box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -260,6 +260,10 @@
         background: #f9f9f9;
         font-size: 14px;
         transition: 0.3s;
+    }
+    
+    .auth-form a{
+        color: var(--bg);
     }
 
     .auth-button {
@@ -331,7 +335,7 @@
     .pink-pink{
         font-family: "Great Vibes", cursive;
         font-size: 4.5rem;
-        color: var(--pink);
+        color: var(--pink-soft);
                 text-shadow: 0 0 4px rgba(255,95,162,.35);
         line-height: 1.5;
     }
@@ -542,7 +546,7 @@
 .dashboard-welcome {
     text-align: center;
     padding: 0;
-    color: --var(text);
+    color: var(--text);
     font-size: 1.5rem;
    
 }
@@ -638,7 +642,7 @@
     }
 
     #budget-form button{
-        background: #ff8177;
+        background: var(--pink);
         padding: 12px 14px;
     }
 
@@ -692,3 +696,5 @@
         text-align: center;
         align-items: center;
     }
+
+  

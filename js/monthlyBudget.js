@@ -1,5 +1,5 @@
 import { requireAuth } from "./authGuard.js";
-import {auth, db } from './firebase.js';
+import {auth, db } from "./firebase.js";
 import {doc, 
         collection, 
         addDoc, 
@@ -31,7 +31,11 @@ onAuthStateChanged(auth, (user) => {
   } else {
     console.log("No user logged in!");
   }
-});
+
+  const logoutBtn = document.getElementById("logout-btn");
+  if(logoutBtn){
+    logoutBtn.style.display = "inline-flex";
+}});
 
 
 /* Form */
@@ -78,7 +82,7 @@ if (form){
   const q = query(
     collection(db, "transactions"),
     where("uid", "==", currentUser.uid),
-    orderBy("date", "desc")
+    orderBy("transactionDate", "desc")
   );
 
   onSnapshot(q, (snapshot) => {
@@ -141,7 +145,8 @@ list.addEventListener("click", async (e) => {
     if (!confirm("Delete this transaction?")) return;
 
     try {
-      await deleteDoc(doc(db, "transactions", id));
+      await deleteDoc(doc,(db, "transactions", id));
+      console.log("Transaction deleted!");
     } catch(err){
       console.error("Delete failed:", err);
     }

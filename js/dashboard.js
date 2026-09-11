@@ -1,4 +1,4 @@
-import { auth , db } from "../firebase.js";
+import { auth , db } from "./firebase.js";
 
 import { 
     onAuthStateChanged 
@@ -18,7 +18,7 @@ requireAuth();
 
 onAuthStateChanged(auth, async(user) => {
     if (!user){
-        window.location.href ="login.html"
+        window.location.href ="signUp.html"
     }
 
     const name = user.displayName;
@@ -27,7 +27,7 @@ onAuthStateChanged(auth, async(user) => {
 
     const q = query(
     collection(db, "transactions"),
-    where("uid", "==", currentUser.uid)
+    where("uid", "==", user.uid)
  );
 
     const snapshot = await getDocs(q);
@@ -76,9 +76,9 @@ new Chart(ctx, {
             ],
 
             backgroundColor: [
-                "#ff4fa3",
-                "#ff6fb5",
-                "#ff8fc7",
+                "#18a913",
+                "#62508b",
+                "#e30f0f",
                 "#ffafd9",
                 "#ffc9e8",
                 "#ff97ca",
