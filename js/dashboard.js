@@ -32,9 +32,37 @@ onAuthStateChanged(auth, async(user) => {
 
     const snapshot = await getDocs(q);
 
+    let weeklyBudget = 0;
+
+    let monthlyBudget = 0;
+    let monthlySpent = 0;
+
+    let nextWeekBudget = 0;
+
     snapshot.forEach((doc) => {
+        const data = doc.data();
         console.log(doc.data());
+
+        if(data.type == "income"){
+            monthlyBudget += data.amount;
+        }
+
+        if(data.type == "expense"){
+            monthlySpent += data.amount;
+        }
+
+        const monthlyRemaining = monthlyBudget - monthlySpent;
+
+        document.getElementById("monthlyBudget").textContent =
+            `$${monthlyBudget.toFixed(2)}`;
+
+        document.getElementById("monthlySpent").textContent =
+            `$${monthlySpent.toFixed(2)}`;
+
+        document.getElementById("monthlyRemaining").textContent =
+            `$${monthlyRemaining.toFixed(2)}`;
     });
+
 
     const logoutBtn= document.getElementById("logout-btn");
 
