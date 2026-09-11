@@ -472,7 +472,7 @@
     /* Cards*/
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 350px));
+    grid-template-columns: repeat(4, minmax(250px, 350px));
     gap: 40px;
     max-width: 1400px;
     margin: auto; 
@@ -484,8 +484,8 @@
     transition : 0.3s;
     color: black;
     border-radius: 20px;
-    background-color: white;
-    margin-top: 50px;
+    background-color: var(--pink-soft);
+    margin-top: 30px;
     padding: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     display: flex;
@@ -528,8 +528,8 @@
 }
 
 .chart-card {
-    background: white;
-    border-radius: 25px;
+    background: var(--lavender);
+    border-radius: 30px;
     padding: 30px;
     gap: 25px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.8);
@@ -548,7 +548,24 @@
     padding: 0;
     color: var(--text);
     font-size: 1.5rem;
-   
+   margin-top: 20px;
+}
+
+.progress-card {
+    box-shadow: 0 4px 8px rgba(0,0,0.2);
+    transition : 0.3s;
+    color: black;
+    border-radius: 20px;
+    background-color: var(--lavender);
+    margin-top: 30px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 260px;
+    padding: 25px;
+
 }
 
 

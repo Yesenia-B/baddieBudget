@@ -47,7 +47,6 @@
 
 
   <!--------- Hero Section---------------->
-   
   <div class="dashboard-welcome"> 
     <h3> Welcome Back, Baddie! </h3>
 </div>
@@ -61,13 +60,6 @@
             <p>Spent:<span id="weeklySpent">$0.00</span></p>
             <p>Remaining Balance:<span id="weeklyRemaining">$0.00</span></p>
         </div>
-        <div class="card">
-            <i class="fa-solid fa-wallet"></i>
-            <h2>Next Week:</h2>
-            <p>Budget:<span id="nextWeekBudget">$0.00</span></p>
-            <p>Planned:<span id="nextWeekSpent">$0.00</span></p>
-            <p>Available:<span id="nextWeekRemaining">$0.00</span></p>
-        </div>
 
         <div class="card">
             <i class="fa-solid fa-wallet"></i>
@@ -75,7 +67,15 @@
             <p>Monthly Income:<span id="monthlyBudget">$0.00</span></p>
             <p>Expenses:<span id="monthlySpent">$0.00</span></p>
             <p>Remaining Balance:<span id="monthlyRemaining">$0.00</span></p>
+            <p>Monthly Spending:<span id="monthlyProg"></span></p>
+        </div>
 
+        <div class="card">
+            <i class="fa-solid fa-wallet"></i>
+            <h2>This Year:</h2>
+            <p>Yearly Income:<span id="YearBudget">$0.00</span></p>
+            <p>Expenses:<span id="YearSpent">$0.00</span></p>
+            <p>Saved:<span id="YearSaved">$0.00</span></p>
         </div>
         <div class="chart-card">
             <i class="fa-solid fa-chart-pie"></i>
@@ -83,7 +83,7 @@
             <canvas id="spendingChart"></canvas>
         </div>
 
-        <div class="card">
+        <div class="progress-card">
             <h2>Spending <progress></progress></h2>
         </div>
     </div>

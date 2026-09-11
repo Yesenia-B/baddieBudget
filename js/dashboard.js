@@ -52,6 +52,7 @@ onAuthStateChanged(auth, async(user) => {
         }
 
         const monthlyRemaining = monthlyBudget - monthlySpent;
+        const monthlyProg = (monthlySpent / monthlyBudget)*100 ;
 
         document.getElementById("monthlyBudget").textContent =
             `$${monthlyBudget.toFixed(2)}`;
@@ -61,6 +62,9 @@ onAuthStateChanged(auth, async(user) => {
 
         document.getElementById("monthlyRemaining").textContent =
             `$${monthlyRemaining.toFixed(2)}`;
+
+        document.getElementById("monthlyProg").textContent = 
+            `$${monthlyProg+"%"}`;
     });
 
 
