@@ -9,6 +9,7 @@ import {doc,
         onSnapshot, 
         deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import {getCurrentMonth, isCurrentMonth} from "./utils/dateUtils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 requireAuth();
@@ -94,11 +95,15 @@ if (form){
     snapshot.forEach((docSnap) => {
       const data = docSnap.data();
 
-      if(data.type == "income") {
+      if(!isCurrentMonth(data.date)){
+        return;
+      }
+
+      if(data.type == "income" && isCurrentMonth(data.date)) {
         totalIncome += data.amount;
       }
 
-      if(data.type == "expense") {
+      if(data.type == "expense" && isCurrentMonth(data.date)) {
         totalExpenses += data.amount;
       }
 
@@ -145,7 +150,7 @@ list.addEventListener("click", async (e) => {
     if (!confirm("Delete this transaction?")) return;
 
     try {
-      await deleteDoc(doc,(db, "transactions", id));
+      await deleteDoc(doc(db, "transactions", id));
       console.log("Transaction deleted!");
     } catch(err){
       console.error("Delete failed:", err);
